@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karen Gisell Tigreros Grisales | Asistente General con IA</title>
+<meta name="description" content="CV y portafolio profesional de Karen Gisell Tigreros Grisales. Asistencia remota, IA aplicada, automatización, procesos y análisis.">
+<style>
+:root{
+ --bg:#f4f1eb;--surface:#fffdf9;--surface2:#ebe6dd;--ink:#242321;--muted:#706c65;
+ --line:#d9d3c9;--accent:#8b6f4f;--accent2:#b79a76;--dark:#242321;--white:#fff;
+ --shadow:0 18px 55px rgba(45,38,30,.08);--radius:26px;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+.container{width:min(1180px,90vw);margin:auto}
+.topbar{position:fixed;z-index:20;top:0;left:0;right:0;background:rgba(244,241,235,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(217,211,201,.7)}
+.nav{height:68px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:800;letter-spacing:-.03em;color:var(--accent)}.brand span{color:var(--accent)}
+.navlinks{display:flex;gap:24px;font-size:.78rem;color:var(--muted)}
+.navlinks a:hover{color:var(--ink)}
+.hero{min-height:100vh;display:grid;align-items:center;padding:130px 0 80px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:650px;height:650px;border-radius:50%;right:-240px;top:70px;background:radial-gradient(circle,#dac9b1 0%,rgba(218,201,177,.18) 45%,transparent 70%)}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center;position:relative}
+.kicker{font-size:.72rem;text-transform:uppercase;letter-spacing:.2em;font-weight:800;color:var(--accent)}
+h1{font-size:clamp(3rem,5.8vw,5.8rem);line-height:.9;letter-spacing:-.065em;margin:18px 0 28px}
+.hero-title{font-size:clamp(1.25rem,2vw,1.7rem);line-height:1.25;max-width:650px}
+.hero-copy{font-size:1.02rem;color:var(--muted);max-width:700px;line-height:1.8}
+.dynamic{min-height:2.8em;transition:opacity .35s ease}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{padding:13px 18px;border-radius:999px;border:1px solid var(--ink);font-weight:700;font-size:.82rem}
+.btn.primary{background:var(--ink);color:white}.btn:hover{transform:translateY(-2px)}
+.profile-card{background:var(--surface);border:1px solid var(--line);border-radius:32px;padding:30px;box-shadow:var(--shadow)}
+.profile-card .initial{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;background:var(--dark);color:white;font-size:1.7rem;font-weight:800;margin-bottom:25px}
+.profile-row{padding:16px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;font-size:.86rem}
+.profile-row span{color:var(--muted);text-align:right}
+.section{min-height:100vh;padding:92px 0 72px;display:flex;align-items:center}
+.section.alt{background:var(--surface2)}
+.section.dark{background:var(--dark);color:white}
+.section-head{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr);justify-content:space-between;gap:30px;align-items:end;margin-bottom:30px}
+.section-head h2{font-size:clamp(1.75rem,3.25vw,3.35rem);line-height:1;letter-spacing:-.05em;margin:8px 0 0;white-space:nowrap}
+.compact-title{font-size:clamp(1.45rem,2.7vw,2.75rem)!important;white-space:nowrap;letter-spacing:-.05em}.section-head p{max-width:440px;color:var(--muted);line-height:1.7}
+.dark .section-head p{color:#c6c0b7}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:30px}
+.large-copy{font-size:1.25rem;line-height:1.65}
+.quote{border-left:3px solid var(--accent2);padding:8px 0 8px 25px;font-size:1.15rem;line-height:1.7}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 8px 28px rgba(40,35,30,.035)}
+.dark .card{background:#302f2d;border-color:#484541}
+.card .number{color:var(--accent);font-weight:800;font-size:.75rem;letter-spacing:.13em}
+.card h3{font-size:1.05rem;margin:7px 0 5px}.card p{color:var(--muted);line-height:1.45;margin-bottom:0;font-size:.84rem}.dark .card p{color:#cbc6bf}
+.skillgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.skill{padding:24px 0;border-top:1px solid var(--line)}
+.skill h3{margin:0 0 10px}.skill p{margin:0;color:var(--muted)}
+.timeline{position:relative;border-left:1px solid var(--line);margin-left:9px;padding-left:34px}
+.job{position:relative;padding:0 0 42px}.job:before{content:"";position:absolute;left:-41px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px var(--bg)}
+.job .date{font-size:.72rem;text-transform:uppercase;letter-spacing:.13em;color:var(--accent);font-weight:800}
+.job h3{font-size:1.35rem;margin:7px 0 3px}.company{color:var(--muted);font-size:.9rem;margin-bottom:15px}
+.job ul{margin:0;padding-left:20px;color:#4e4b46}.job li{margin:8px 0;line-height:1.55}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.metric{padding:25px;background:var(--dark);color:white;border-radius:22px}.metric .big{font-size:2.7rem;font-weight:850;letter-spacing:-.06em}.metric p{color:#c9c4bd;margin:4px 0 0}
+.case{display:grid;grid-template-columns:.22fr 1fr;gap:22px;padding:19px 0;border-top:1px solid rgba(255,255,255,.16)}
+.case:last-child{border-bottom:1px solid rgba(255,255,255,.16)}
+.case-label{color:#c5a57e;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;font-weight:800;padding-top:4px}
+.case h3{font-size:clamp(1.05rem,1.65vw,1.45rem);letter-spacing:-.035em;margin:0 0 7px;line-height:1.15}.case p{color:#d0cbc4;line-height:1.45;max-width:760px;margin:5px 0;font-size:.86rem}
+.flow{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin-top:10px}.flow span{border:1px solid #595550;border-radius:999px;padding:5px 9px;font-size:.68rem}.flow b{color:#c5a57e}
+.process{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.step{padding:20px 15px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}.step b{color:var(--accent);font-size:.8rem}.step h4{margin:9px 0 4px}.step p{font-size:.8rem;color:var(--muted);margin:0}
+.tools{display:flex;flex-wrap:wrap;gap:9px}.tag{padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:.78rem}.tag.ia{border-color:var(--accent2)}
+.remote-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.remote{display:flex;gap:18px;padding:23px;border:1px solid var(--line);border-radius:20px}.remote .icon{font-size:1.5rem}.remote h3{margin:0 0 5px}.remote p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.55}
+.footer{padding:85px 0;background:#1d1c1a;color:white}.footer-grid{display:flex;justify-content:space-between;gap:40px;align-items:end}.footer h2{font-size:clamp(2.7rem,6vw,6rem);line-height:.9;letter-spacing:-.06em;margin:15px 0}.footer p{color:#c8c2ba}.contact{font-size:.9rem;text-align:right}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
+@media(max-width:900px){.hero-grid,.about{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.process{grid-template-columns:repeat(3,1fr)}.section-head{display:block}.section-head p{margin-top:22px}.navlinks{display:flex;flex-wrap:wrap;gap:10px 14px;justify-content:flex-end;font-size:.75rem}}
+@media(max-width:600px){.cards,.skillgrid,.remote-grid,.metrics{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}.case{grid-template-columns:1fr;gap:12px}.hero{padding-top:105px}.footer-grid{display:block}.contact{text-align:left;margin-top:30px}.section{padding:75px 0}}
+
+.career-highlight{background:var(--dark);color:white;border-radius:26px;padding:34px 38px;margin:5px 0 38px;box-shadow:var(--shadow)}
+.career-label{font-size:.68rem;letter-spacing:.15em;font-weight:800;color:#c5a57e;margin-bottom:7px}
+.career-highlight h3{font-size:clamp(1rem,1.55vw,1.45rem);margin:0 0 5px;white-space:nowrap;letter-spacing:-.03em}
+.career-highlight p{color:#d0cbc4;margin:0;font-size:.88rem}
+.subheading{font-size:.72rem;letter-spacing:.17em;color:var(--accent);font-weight:800;margin:0 0 18px}
+@media(max-width:900px){.compact-title{white-space:normal!important}.navlinks{gap:14px}}
+
+.additional-experience{
+  margin-top:48px;
+  padding-top:30px;
+  border-top:1px solid var(--line);
+}
+.additional-label{
+  font-size:.72rem;
+  letter-spacing:.16em;
+  font-weight:800;
+  color:var(--accent);
+  margin-bottom:18px;
+}
+.additional-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+.additional-grid>div{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:20px;
+}
+.additional-grid b{
+  display:block;
+  font-size:.94rem;
+  line-height:1.35;
+}
+.additional-grid span{
+  display:block;
+  color:var(--muted);
+  font-size:.8rem;
+  margin-top:7px;
+  line-height:1.45;
+}
+.next-section{
+  position:fixed;
+  z-index:30;
+  left:50%;
+  bottom:22px;
+  transform:translateX(-50%);
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  border:1px solid rgba(36,35,33,.25);
+  background:rgba(255,253,249,.88);
+  backdrop-filter:blur(12px);
+  color:var(--ink);
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  box-shadow:0 8px 25px rgba(0,0,0,.10);
+  transition:transform .25s ease,opacity .25s ease,background .25s ease;
+}
+.next-section:hover{
+  transform:translateX(-50%) translateY(-4px);
+  background:var(--ink);
+  color:white;
+}
+.next-section span{
+  font-size:1.45rem;
+  line-height:1;
+  animation:floatArrow 1.8s ease-in-out infinite;
+}
+.next-section.hidden{
+  opacity:0;
+  pointer-events:none;
+}
+@keyframes floatArrow{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(4px)}
+}
+@media(max-width:900px){
+  .additional-grid{grid-template-columns:1fr}
+}
+
+.formation-card h3{font-size:clamp(.86rem,1.15vw,1.05rem);white-space:nowrap;line-height:1.15}
+.formation-card p{font-size:.78rem;line-height:1.4}
+.formation-card{padding:17px}
+.subheading{margin-bottom:12px}
+.section.alt .section-head{margin-bottom:22px}
+.section.alt .cards{gap:12px}
+.section.alt .career-highlight{padding:18px 26px;margin:0 0 20px;border-radius:22px}
+.section.alt .career-highlight h3{overflow:hidden;text-overflow:ellipsis}
+
+#experiencia .timeline{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  border-left:0;
+  margin-left:0;
+  padding-left:0;
+}
+#experiencia .job{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:20px;
+  margin:0;
+}
+#experiencia .job:before{display:none}
+#experiencia .job{padding-bottom:18px}
+#experiencia .job h3{font-size:1rem;line-height:1.2;margin:6px 0 3px}
+#experiencia .job .company{font-size:.78rem;margin-bottom:8px}
+#experiencia .job ul{padding-left:17px}
+#experiencia .job li{font-size:.76rem;line-height:1.4;margin:5px 0}
+#experiencia .additional-experience{margin-top:24px;padding-top:18px}
+#experiencia .additional-grid{gap:10px}
+#experiencia .additional-grid>div{padding:14px}
+#experiencia .additional-grid b{font-size:.8rem}
+#experiencia .additional-grid span{font-size:.7rem}
+
+@media(max-width:900px){
+  .section{min-height:auto;padding:85px 0 70px}
+  .section-head h2,.compact-title{white-space:normal!important}
+  .additional-grid{grid-template-columns:1fr}
+  #experiencia .timeline{grid-template-columns:1fr}
+  .formation-card h3{white-space:normal}
+}
+@media(max-width:600px){
+  .section-head h2{font-size:2rem!important}
+  .cards{grid-template-columns:1fr}
+  .section.alt .cards{grid-template-columns:1fr}
+  .career-highlight h3{white-space:normal}
+}
+
+#portafolio{min-height:100vh;padding:82px 0 48px;display:flex;align-items:center}
+#portafolio .section-head{margin-bottom:17px}
+#portafolio .section-head h2{font-size:clamp(1.8rem,3.2vw,3.1rem)}
+#portafolio .case:last-child{padding-bottom:0}
+@media(max-height:850px) and (min-width:901px){
+  #portafolio{padding:78px 0 34px}
+  #portafolio .section-head{margin-bottom:10px}
+  #portafolio .section-head p{font-size:.82rem;line-height:1.4}
+  .case{padding:13px 0}
+  .case p{font-size:.8rem;line-height:1.35}
+  .case h3{font-size:1.15rem}
+  .flow{margin-top:7px}
+}
+@media(max-width:900px){
+  #portafolio{min-height:auto;padding:82px 0 65px}
+  .case{grid-template-columns:1fr;gap:7px;padding:22px 0}
+}
+
+#perfil .section-head{grid-template-columns:minmax(0,1.45fr) minmax(360px,.8fr);gap:26px}
+#perfil .section-head h2{font-size:clamp(1.65rem,2.65vw,2.75rem);white-space:nowrap}
+#perfil .section-head p{margin:0;max-width:none}
+
+.section.alt .cards{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.section.alt .formation-card{min-height:142px;height:100%;display:flex;flex-direction:column;justify-content:flex-start}
+.section.alt .formation-card h3{min-height:2.3em;white-space:normal;overflow-wrap:anywhere}
+.section.alt .formation-card p{margin-top:7px}
+
+@media(max-width:900px){
+  #perfil .section-head{grid-template-columns:1fr;gap:18px}
+  #perfil .section-head h2{white-space:normal}
+  .section.alt .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .compact-title{white-space:normal!important}
+}
+@media(max-width:600px){
+  .section.alt .cards{grid-template-columns:1fr}
+}
+
+@media(max-width:600px){
+  .topbar .nav{
+    height:auto;
+    min-height:68px;
+    align-items:flex-start;
+    flex-direction:column;
+    padding:10px 0;
+    gap:8px;
+  }
+  .topbar .navlinks{
+    width:100%;
+    justify-content:flex-start;
+    gap:8px 13px;
+    font-size:.72rem;
+    padding-bottom:4px;
+  }
+  .topbar .navlinks a{white-space:nowrap}
+}
+
+</style>
+</head>
+<body>
+
+<header class="topbar">
+<div class="container nav">
+<a class="brand" href="#inicio">Karen <span>Tigreros</span></a>
+<div class="navlinks">
+<a href="#inicio">Inicio</a><a href="#perfil">Perfil</a><a href="#soporte">Soporte administrativo</a><a href="#experiencia">Experiencia</a><a href="#portafolio">Casos</a><a href="#herramientas">Herramientas</a><a href="#contacto">Contacto</a>
+</div>
+</div>
+</header>
+
+<main>
+<!-- Navegación flotante entre secciones -->
+<button class="next-section" id="nextSection" aria-label="Ir a la siguiente sección" title="Siguiente sección">
+  <span>↓</span>
+</button>
+
+<section class="hero" id="inicio">
+<div class="container hero-grid">
+<div class="reveal">
+<div class="kicker">CV + Portafolio · Trabajo remoto</div>
+<h1>Karen Gisell<br>Tigreros</h1>
+<div class="hero-title"><b>Asistente General con Inteligencia Artificial</b><br>Asistencia administrativa · Comunicación · Reportes · IA aplicada</div>
+<p class="hero-copy dynamic" id="heroDynamic"></p>
+<div class="ctas"><a class="btn primary" href="#experiencia">Ver experiencia</a><a class="btn" href="#portafolio">Ver casos reales</a></div>
+</div>
+<div class="profile-card reveal">
+<div class="initial">KT</div>
+<div class="profile-row"><b>Ubicación</b><span>Colombia · Remoto</span></div>
+<div class="profile-row"><b>Experiencia</b><span>+10 años</span></div>
+<div class="profile-row"><b>Fortaleza</b><span>Procesos + tecnología + criterio</span></div>
+<div class="profile-row"><b>Idiomas</b><span>Español nativo · Inglés B1</span></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="perfil">
+<div class="container">
+<div class="section-head reveal"><div><div class="kicker">01 · Perfil profesional</div><h2 class="compact-title">Organizar&nbsp;&nbsp;|&nbsp;&nbsp;Resolver&nbsp;&nbsp;|&nbsp;&nbsp;Optimizar</h2></div>
+<p>Profesional con más de 10 años de experiencia en operaciones, organización administrativa, documentación, coordinación de reuniones y seguimiento de tareas, principalmente en entornos remotos y multiculturales.</p></div>
+<div class="about">
+<div class="large-copy reveal">Mi fortaleza está en <b>organizar información, redactar y estructurar documentos, coordinar actividades y dar seguimiento a compromisos</b>, usando herramientas digitales para trabajar con orden y eficiencia.</div>
+<div class="quote reveal">“Uso la inteligencia artificial para redactar, resumir y estructurar información; después verifico el resultado antes de entregarlo.”</div>
+</div>
+</div>
+</section>
+
+<section class="section alt">
+<div class="container">
+<div class="section-head reveal"><div><div class="kicker">02 · Competencias</div><h2>Lo que hago<br>bien.</h2></div></div>
+<div class="cards">
+<div class="card reveal"><div class="number">01 · OPERACIONES</div><h3>Procesos y organización</h3><p>Diseño y estandarización de procesos, documentación, seguimiento de indicadores y gestión de prioridades.</p></div>
+<div class="card reveal"><div class="number">02 · DATOS</div><h3>Análisis y reportes</h3><p>KPIs, dashboards, Excel avanzado y transformación de información cualitativa en datos estructurados.</p></div>
+<div class="card reveal"><div class="number">03 · IA</div><h3>Productividad con IA</h3><p>Prompting, chatbots, automatización de análisis y uso de IA aplicada a procesos.</p></div>
+<div class="card reveal"><div class="number">04 · PROYECTOS</div><h3>Seguimiento</h3><p>Requerimientos, criterios de aceptación, entregables, pruebas funcionales e implementación.</p></div>
+<div class="card reveal"><div class="number">05 · COMUNICACIÓN</div><h3>Información clara</h3><p>Organización de información, documentación, síntesis y comunicación estratégica.</p></div>
+<div class="card reveal"><div class="number">06 · REMOTO</div><h3>Autonomía</h3><p>Trabajo con equipos distribuidos, gestión de prioridades y coordinación multidisciplinaria.</p></div>
+</div>
+</div>
+</section>
+
+
+<section class="section" id="soporte">
+ <div class="container">
+  <div class="section-head reveal"><div><div class="kicker">04 · Soporte administrativo</div><h2>Apoyo práctico<br>para el día a día.</h2></div>
+  <p>Competencias aplicables a las funciones de Asistente General con Inteligencia Artificial.</p></div>
+  <div class="cards">
+   <div class="card reveal"><div class="number">01 · COMUNICACIÓN</div><h3>Correos y documentos</h3><p>Redacción de borradores, organización de ideas, síntesis de información y preparación de documentos claros.</p></div>
+   <div class="card reveal"><div class="number">02 · COORDINACIÓN</div><h3>Reuniones y pendientes</h3><p>Organización de reuniones, seguimiento de compromisos, priorización de tareas y control de entregables.</p></div>
+   <div class="card reveal"><div class="number">03 · INFORMACIÓN</div><h3>Reportes y registros</h3><p>Actualización de información, organización de bases de datos y elaboración de reportes, indicadores y presentaciones.</p></div>
+   <div class="card reveal"><div class="number">04 · PROCEDIMIENTOS</div><h3>Procesos claros</h3><p>Documentación de procedimientos, instructivos y guías para facilitar la ejecución consistente de tareas.</p></div>
+   <div class="card reveal"><div class="number">05 · INVESTIGACIÓN</div><h3>Búsqueda y síntesis</h3><p>Recopilación, clasificación y resumen de información para apoyar el análisis y la toma de decisiones.</p></div>
+   <div class="card reveal"><div class="number">06 · IA RESPONSABLE</div><h3>Agilizar y verificar</h3><p>Uso de IA para tareas repetitivas, con revisión crítica de exactitud, contexto y utilidad antes de compartir resultados.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="experiencia">
+<div class="container">
+<div class="section-head reveal"><div><div class="kicker">03 · CV</div><h2>Experiencia<br>profesional.</h2></div>
+<p>Experiencia construida en operaciones, gestión de personas, proyectos, procesos y transformación digital dentro de entornos remotos.</p></div>
+<div class="timeline">
+<div class="job reveal"><div class="date">Dic 2025 – Abr 2026</div><h3>Learning, Development & Culture Manager</h3><div class="company">Arroyo Consulting · Staffing de Talento Tecnológico · Remoto</div>
+<ul><li>Diseñé el modelo operativo del área por verticales, definiendo responsabilidades, procesos y mecanismos de seguimiento.</li><li>Definí KPIs y dashboards para facilitar decisiones basadas en información objetiva.</li><li>Traduje necesidades operativas en requerimientos funcionales para herramientas digitales y realicé pruebas funcionales.</li><li>Diseñé chatbots mediante prompting para procesar información cualitativa y convertirla en información estructurada.</li></ul></div>
+<div class="job reveal"><div class="date">Feb 2023 – Nov 2025</div><h3>Human Capital Manager</h3><div class="company">Arroyo Consulting · Staffing de Talento Tecnológico · Remoto</div>
+<ul><li>Diseñé políticas y procesos para generar mayor consistencia en la gestión dentro de una organización distribuida.</li><li>Implementé métricas y mecanismos de seguimiento para apoyar decisiones basadas en datos.</li><li>Convertí necesidades del área en requerimientos para soluciones digitales desarrolladas mediante Power Automate.</li><li>Definí criterios de aceptación y realicé pruebas funcionales.</li><li>Lideré el desarrollo de una herramienta de IA para analizar compatibilidad entre perfiles y posiciones.</li></ul></div>
+<div class="job reveal"><div class="date">Dic 2021 – Feb 2023</div><h3>Líder de Reclutamiento y Contrataciones</h3><div class="company">Arroyo Consulting · Remoto</div>
+<ul><li>Estandaricé procesos de selección para diferentes países.</li><li>Implementé KPIs para monitorear productividad, eficiencia y resultados.</li><li>Implementé Planner, Trello y Azure DevOps para organizar tareas, visualizar avances y mejorar seguimiento.</li></ul></div>
+<div class="job reveal"><div class="date">Sep 2020 – Dic 2021</div><h3>Reclutadora y Creadora del Proceso de Atracción de Talento</h3><div class="company">Arroyo Consulting · Remoto</div>
+<ul><li>Diseñé y estructuré desde cero el proceso de atracción y selección de talento para operaciones de LATAM.</li><li>Documenté etapas, responsabilidades y flujos para convertir la selección en un modelo repetible y escalable.</li></ul></div>
+</div>
+
+<div class="additional-experience reveal">
+  <div class="additional-label">EXPERIENCIA PROFESIONAL ADICIONAL</div>
+  <div class="additional-grid">
+    <div><b>Coordinadora de Mercadeo (E)</b><span>Centro Comercial Buga Plaza</span></div>
+    <div><b>Administradora de Tienda</b><span>Kadmiel Perfumería</span></div>
+    <div><b>Auxiliar de Compras y Logística / Secretaria de Servicios Logísticos</b><span>Carvajal Tecnología y Servicios</span></div>
+  </div>
+</div>
+</div>
+</section>
+
+<section class="section dark" id="portafolio">
+<div class="container">
+<div class="section-head reveal"><div><div class="kicker">04 · Portafolio</div><h2>Experiencia que<br>se puede demostrar.</h2></div>
+<p>Casos basados en proyectos y soluciones descritos en mi experiencia profesional.</p></div>
+
+<div class="case reveal"><div class="case-label">Caso 01</div><div><h3>Información cualitativa → información estructurada</h3><p>Diseñé un chatbot utilizando prompting para procesar información de sesiones 1:1 y convertirla en datos estructurados para su posterior análisis.</p><div class="flow"><span>Información</span><b>→</b><span>IA</span><b>→</b><span>Clasificación</span><b>→</b><span>Estructuración</span><b>→</b><span>Análisis</span></div></div></div>
+
+<div class="case reveal"><div class="case-label">Caso 02</div><div><h3>Automatización de análisis de procesos</h3><p>Diseñé un chatbot especializado para automatizar parte del análisis de información de offboarding. El tiempo de gestión pasó de aproximadamente 40–60 minutos a 15 minutos por caso.</p></div></div>
+
+<div class="case reveal"><div class="case-label">Caso 03</div><div><h3>Organización y seguimiento de operaciones</h3><p>Implementé herramientas digitales de gestión como Planner, Trello y Azure DevOps para organizar tareas, visualizar avances y mejorar el seguimiento del equipo. La implementación contribuyó a una mejora aproximada del 30% en productividad y trazabilidad.</p></div></div>
+
+<div class="case reveal"><div class="case-label">Caso 04</div><div><h3>Información → reporte → decisión</h3><p>Mi metodología parte de recopilar y organizar información, analizarla, visualizarla mediante indicadores o dashboards, interpretar los resultados y validar antes de utilizarlos para tomar decisiones.</p></div></div>
+</div>
+</section>
+
+<section class="section" id="metodo">
+<div class="container">
+<div class="section-head reveal"><div><div class="kicker">05 · Método</div><h2>Así trabajo<br>con IA.</h2></div>
+<p>La inteligencia artificial es un acelerador de productividad. El criterio profesional sigue siendo parte del proceso.</p></div>
+<div class="process">
+<div class="step reveal"><b>01</b><h4>Entender</h4><p>Definir el objetivo.</p></div>
+<div class="step reveal"><b>02</b><h4>Estructurar</h4><p>Organizar la información.</p></div>
+<div class="step reveal"><b>03</b><h4>Generar</h4><p>Usar IA para acelerar.</p></div>
+<div class="step reveal"><b>04</b><h4>Verificar</h4><p>Revisar errores.</p></div>
+<div class="step reveal"><b>05</b><h4>Ajustar</h4><p>Corregir y adaptar.</p></div>
+<div class="step reveal"><b>06</b><h4>Entregar</h4><p>Convertir en resultado.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section alt" id="herramientas">
+<div class="container">
+<div class="section-head reveal"><div><div class="kicker">06 · Herramientas</div><h2>Mi stack de<br>productividad.</h2></div>
+<p>Herramientas y conocimientos sustentados en mi CV y experiencia profesional.</p></div>
+<div class="skillgrid">
+<div class="skill reveal"><h3>Inteligencia artificial</h3><p>ChatGPT · Prompting · Chatbots con IA · Automatización de análisis · Estructuración de información cualitativa · Matching mediante IA</p></div>
+<div class="skill reveal"><h3>Productividad y colaboración</h3><p>Excel avanzado · Word · PowerPoint · Outlook · Microsoft Teams · Microsoft Lists · SharePoint</p></div>
+<div class="skill reveal"><h3>Gestión de tareas y proyectos</h3><p>Microsoft Planner · Trello · Azure DevOps · Outlook para coordinación de reuniones</p></div>
+<div class="skill reveal"><h3>Automatización</h3><p>Microsoft Power Automate · Automatización de tareas · Diseño de soluciones digitales</p></div>
+<div class="skill reveal"><h3>Gestión y análisis</h3><p>Dashboards · KPIs · People Analytics · Análisis de procesos · Requerimientos funcionales · Pruebas funcionales</p></div>
+<div class="skill reveal"><h3>Plataformas</h3><p>Deel</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="remoto">
+<div class="container">
+<div class="section-head reveal"><div><div class="kicker">07 · Aporte al rol</div><h2>Lo que puedo<br>hacer por un equipo remoto.</h2></div></div>
+<div class="remote-grid">
+<div class="remote reveal"><div class="icon">✦</div><div><h3>Comunicación</h3><p>Preparar borradores, organizar información y convertir ideas en comunicaciones claras.</p></div></div>
+<div class="remote reveal"><div class="icon">▤</div><div><h3>Documentación</h3><p>Crear procedimientos, instructivos, resúmenes y documentos estructurados.</p></div></div>
+<div class="remote reveal"><div class="icon">▥</div><div><h3>Reportes</h3><p>Organizar información y convertirla en reportes, indicadores y dashboards.</p></div></div>
+<div class="remote reveal"><div class="icon">⌕</div><div><h3>Investigación</h3><p>Recopilar, sintetizar y estructurar información para facilitar el análisis.</p></div></div>
+<div class="remote reveal"><div class="icon">◎</div><div><h3>IA aplicada</h3><p>Utilizar IA para acelerar tareas repetitivas y mejorar la productividad.</p></div></div>
+<div class="remote reveal"><div class="icon">↗</div><div><h3>Automatización</h3><p>Detectar tareas repetitivas y proponer formas de simplificarlas mediante herramientas digitales.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="section alt">
+<div class="container">
+<div class="section-head reveal">
+<div>
+<div class="kicker">08 · Formación</div>
+<h2>Formación<br>académica.</h2>
+</div>
+<p>Una base académica profesional complementada con formación especializada en gestión, talento, resolución de problemas, adaptabilidad y herramientas digitales e IA.</p>
+</div>
+
+<div class="career-highlight reveal">
+<div class="career-label">CARRERA TECNOLÓGICA</div>
+<h3>Tecnóloga en Comercio Exterior y Negocios Internacionales</h3>
+<p>Tecnológica Autónoma del Pacífico · 2010</p>
+</div>
+
+<div class="subheading reveal">FORMACIÓN COMPLEMENTARIA</div>
+<div class="cards">
+<div class="card reveal formation-card"><div class="number">2026</div><h3>McKinsey.org Forward Program</h3><p><b>McKinsey.org</b> · Desarrollo profesional en resolución estructurada de problemas, comunicación, adaptabilidad, colaboración y herramientas digitales e IA.</p></div>
+<div class="card reveal formation-card"><div class="number">2024</div><h3>Diplomado en Gerencia del Talento Humano</h3><p>Universidad Piloto de Colombia</p></div>
+<div class="card reveal formation-card"><div class="number">2021</div><h3>Diplomado en Gestión del Talento Digital con HR Analytics</h3><p>Universidad de Cataluña</p></div>
+<div class="card reveal formation-card"><div class="number">2017</div><h3>Curso en Administración de Recursos Humanos</h3><p>SENA Virtual</p></div>
+<div class="card reveal formation-card"><div class="number">2011</div><h3>Seminario en Impacto e Influencia</h3><p>Pontificia Universidad Javeriana</p></div>
+</div>
+</div>
+</section>
+
+<section class="footer" id="contacto">
+<div class="container footer-grid">
+<div>
+<div class="kicker">09 · Contacto</div>
+<h2>Hagamos que la<br>operación sea más simple.</h2>
+<p>Asistente General con Inteligencia Artificial · Soporte administrativo · Reportes · Documentación · IA aplicada</p>
+</div>
+<div class="contact">
+<p><b>Karen Gisell Tigreros Grisales</b></p>
+<p>Colombia · Disponible para trabajo remoto</p>
+<p>+57 314 567 1238</p>
+<p>karengtg1238@gmail.com</p>
+<p>LinkedIn: karen-gisell-tigreros-grisales-006972148</p>
+</div>
+</div>
+</section>
+</main>
+
+<script>
+const phrases=[
+"Redacto y organizo información para que los equipos puedan actuar con claridad.",
+"Preparo reportes, documentos y presentaciones con atención al detalle.",
+"Utilizo IA para resumir, estructurar información y agilizar tareas repetitivas.",
+"Verifico los resultados antes de utilizarlos o compartirlos."
+];
+
+let p=0;
+const hero=document.getElementById("heroDynamic");
+
+function changePhrase(){
+  hero.style.opacity="0";
+  setTimeout(()=>{
+    hero.textContent=phrases[p];
+    hero.style.opacity="1";
+    p=(p+1)%phrases.length;
+  },300);
+}
+changePhrase();
+setInterval(changePhrase,3800);
+
+// Animaciones de aparición
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting)e.target.classList.add("visible");
+  });
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+
+// Navegación flotante: avanza exactamente a la siguiente sección visible.
+const nextButton=document.getElementById("nextSection");
+const sections=[...document.querySelectorAll("main > section")];
+
+function getCurrentSectionIndex(){
+  const marker=window.scrollY + window.innerHeight * 0.42;
+  let current=0;
+  sections.forEach((section,index)=>{
+    if(section.offsetTop <= marker) current=index;
+  });
+  return current;
+}
+
+function updateNextButton(){
+  const current=getCurrentSectionIndex();
+  if(current >= sections.length-1){
+    nextButton.classList.add("hidden");
+  }else{
+    nextButton.classList.remove("hidden");
+  }
+}
+
+nextButton.addEventListener("click",()=>{
+  const current=getCurrentSectionIndex();
+  const next=sections[Math.min(current+1,sections.length-1)];
+  if(next){
+    next.scrollIntoView({behavior:"smooth",block:"start"});
+  }
+});
+
+window.addEventListener("scroll",updateNextButton,{passive:true});
+window.addEventListener("resize",updateNextButton);
+updateNextButton();
+</script>
+</body>
